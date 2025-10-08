@@ -9,3 +9,4 @@ transformers
 requests
 python-dotenv
 pandas
+torch
