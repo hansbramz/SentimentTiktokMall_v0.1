@@ -110,7 +110,7 @@ def fetch_and_process_reviews():
                 'review_date': convert_timestamp_to_date(i.get('review_time')),
                 'username': i.get('user_name'),
                 'product_name': i.get('product_info', {}).get('product_name'),
-                'product_id': 'TiktokMall' + str(i.get('product_info', {}).get('product_id')), # Assuming product_id can be converted to string
+                'product_id': 'TiktokMall' + str(i.get('product_name', {}).get('product_id')), # Assuming product_id can be converted to string
                 'product_image': i.get('product_info', {}).get('img', {}).get('url_list', [None])[0],
                 'sentiment_label': sentiment_label,
                 'sentiment_score': sentiment_score,
