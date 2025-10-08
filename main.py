@@ -21,9 +21,12 @@ DB_HOST = os.getenv("DB_HOST")
 DB_PORT = int(os.getenv("DB_PORT"))
 DB_DATABASE = os.getenv("DB_DATABASE")
 
-# Load request headers and cookies from .env
-COOKIES = json.loads(os.getenv("COOKIES_JSON"))
-HEADERS = json.loads(os.getenv("HEADERS_JSON"))
+# Use a fallback empty string to prevent the NoneType error
+cookies_json_str = os.getenv("COOKIES_JSON", '{}')
+COOKIES = json.loads(cookies_json_str)
+
+headers_json_str = os.getenv("HEADERS_JSON", '{}')
+HEADERS = json.loads(headers_json_str)
 
 # Setup NLP pipelines
 print("Downloading NLTK vader_lexicon...")
