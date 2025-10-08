@@ -1,0 +1,11 @@
+# requirements.txt
+translate
+deep_translator
+nltk
+pymysql
+sqlalchemy
+textblob
+transformers
+requests
+python-dotenv
+pandas
